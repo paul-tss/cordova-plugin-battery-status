@@ -112,6 +112,15 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateBatteryStatus:)
                                                      name:UIDeviceBatteryLevelDidChangeNotification object:nil];
     }
+    
+    // PS Mar 14 - I need an initial value rather than just a poll
+    NSDictionary* batteryData = [self getBatteryStatus];
+
+    if (self.callbackId) {
+        CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:batteryData];
+        [result setKeepCallbackAsBool:YES];
+        [self.commandDelegate sendPluginResult:result callbackId:self.callbackId];
+    }
 }
 
 /* turn off battery monitoring */
