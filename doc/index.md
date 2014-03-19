@@ -17,7 +17,7 @@
     under the License.
 -->
 
-# org.apache.cordova.battery-status
+# org.tss.cordova.battery-status
 
 This plugin provides an implementation of an old version of the [Battery Status Events API](http://www.w3.org/TR/2011/WD-battery-status-20110915/).
 
@@ -29,7 +29,7 @@ It adds the following three `window` events:
 
 ## Installation
 
-    cordova plugin add org.apache.cordova.battery-status
+    cordova plugin add org.tss.cordova.battery-status
 
 ## batterystatus
 

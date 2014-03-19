@@ -2,14 +2,14 @@
 
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-      id="org.apache.cordova.battery-status"
+      id="org.tss.cordova.battery-status"
       version="0.2.7">
     <name>Battery</name>
     <description>Cordova Battery Plugin</description>
     <license>Apache 2.0</license>
     <keywords>cordova,battery</keywords>
-    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-battery-status.git</repo>
-    <issue>https://issues.apache.org/jira/browse/CB/component/12320643</issue>
+    <repo>https://github.com/paul-tss/cordova-plugin-battery-status.git</repo>
+    <issue></issue>
 
     <js-module src="www/battery.js" name="battery">
         <clobbers target="navigator.battery" />
@@ -19,22 +19,22 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Battery" >
-                <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener"/>
+                <param name="android-package" value="org.tss.cordova.batterystatus.BatteryListener"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/BatteryListener.java" target-dir="src/org/apache/cordova/batterystatus" />
+        <source-file src="src/android/BatteryListener.java" target-dir="src/org/tss/cordova/batterystatus" />
     </platform>
 
     <!-- amazon-fireos -->
     <platform name="amazon-fireos">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Battery" >
-                <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener"/>
+                <param name="android-package" value="org.tss.cordova.batterystatus.BatteryListener"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/BatteryListener.java" target-dir="src/org/apache/cordova/batterystatus" />
+        <source-file src="src/android/BatteryListener.java" target-dir="src/org/tss/cordova/batterystatus" />
     </platform>
     
     <!-- ubuntu -->

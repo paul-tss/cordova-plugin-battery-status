@@ -20,10 +20,14 @@
 -->
 # Release Notes
 
+### PS Mar 2014
+* Needed to add a very minor change to suit ios app
+* Require initial battery level on start, like how Android works
+
 ### 0.2.3 (Sept 25, 2013)
 * CB-4889 bumping&resetting version
 * [CB-4752] Incremented plugin version on dev branch.
-* CB-4889 renaming org.apache.cordova.core.battery-status to org.apache.cordova.battery-status
+* CB-4889 renaming org.tss.cordova.core.battery-status to org.tss.cordova.battery-status
 
 ### 0.2.4 (Oct 25, 2013)
 * CB-5128: added repo + issue tag to plugin.xml for battery status plugin
