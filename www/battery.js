@@ -55,6 +55,9 @@ Battery.onHasSubscribersChange = function() {
   if (this.numHandlers === 1 && handlers() === 1) {
       exec(battery._status, battery._error, "Battery", "start", []);
   } else if (handlers() === 0) {
+      // PS Mar 14 - I need these values reset so I get an update straight away
+      this._level = null;
+      this._isPlugged = null;
       exec(null, null, "Battery", "stop", []);
   }
 };
@@ -67,9 +70,8 @@ Battery.onHasSubscribersChange = function() {
 Battery.prototype._status = function(info) {
     if (info) {
         var me = battery;
-    var level = info.level;
-        if (me._level !== level || me._isPlugged !== info.isPlugged) {
-            // Fire batterystatus event
+            var level = info.level;
+                    // Fire batterystatus event
             cordova.fireWindowEvent("batterystatus", info);
 
             // Fire low battery event
@@ -81,7 +83,7 @@ Battery.prototype._status = function(info) {
                     cordova.fireWindowEvent("batterycritical", info);
                 }
             }
-        }
+        
         me._level = level;
         me._isPlugged = info.isPlugged;
     }
